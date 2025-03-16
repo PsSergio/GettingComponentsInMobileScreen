@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AccessibilityServiceTestJava</string>
+    <string name="accessibility_service_label">test</string>
+    <string name="accessibility_service_description">my descripition\n</string>
+</resources>

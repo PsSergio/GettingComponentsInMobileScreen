@@ -55,18 +55,29 @@ public class GetAllComponentsService extends AccessibilityService {
 
     }
 
+    public boolean isNodeComponentLayout(AccessibilityNodeInfo node){
+        var layoutsComponents = new String[]{
+                "android.view.View",
+                "android.widget.RelativeLayout",
+                "android.widget.LinearLayout",
+                "android.widget.ScrollView",
+                "android.widget.HorizontalScrollView",
+                "android.widget.GridView",
+                "android.view.ViewGroup",
+                "android.widget.ListView",
+                "android.widget.FrameLayout"
+        };
+        for (String layoutsComponent : layoutsComponents) {
+            if (Objects.equals(node.getClassName(), layoutsComponent)) return true;
+        }
+        return false;
+    }
+
     public boolean isComponentValidLayout(AccessibilityNodeInfo node){
-        if((Objects.equals(node.getClassName(), "android.view.View") ||
-                Objects.equals(node.getClassName(), "android.widget.RelativeLayout") ||
-                Objects.equals(node.getClassName(), "android.widget.LinearLayout") ||
-                Objects.equals(node.getClassName(), "android.widget.FrameLayout") ||
-                Objects.equals(node.getClassName(), "android.widget.ScrollView") ||
-                Objects.equals(node.getClassName(), "android.widget.HorizontalScrollView") ||
-                Objects.equals(node.getClassName(), "android.widget.ListView") ||
-                Objects.equals(node.getClassName(), "android.widget.GridView") ||
-                Objects.equals(node.getClassName(), "android.view.ViewGroup"))
-                && (node.getContentDescription() != null || node.getText() != null) && (node.isClickable() || node.isFocusable())
-        ) return true;
+
+        if(!isNodeComponentLayout(node)) return true;
+
+        if((node.getContentDescription() != null || node.getText() != null) && (node.isClickable() || node.isFocusable())) return true;
 
         return false;
     }
@@ -75,6 +86,8 @@ public class GetAllComponentsService extends AccessibilityService {
         if(!isComponentValidLayout(node)) return false;
 
         if(!node.isVisibleToUser()) return false;
+
+        if(node.getText() == null && node.getContentDescription() == null && !node.isFocusable() && !node.isClickable()) return false;
 
         if(node.getClassName().toString().equals("android.widget.ImageView") && node.getContentDescription() == null)
             return false;
@@ -96,8 +109,9 @@ public class GetAllComponentsService extends AccessibilityService {
 
 
         for(int i = 0; i < node.getChildCount(); i++){
-//            if(isComponentValidLayout(node)) continue;
+
             getComponent(node.getChild(i));
+
         }
     }
 

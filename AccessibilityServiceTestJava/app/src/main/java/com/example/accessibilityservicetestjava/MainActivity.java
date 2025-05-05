@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startActivity(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS));
+//        startActivity(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS));
 
 
 //        if (!Settings.canDrawOverlays(this)) {

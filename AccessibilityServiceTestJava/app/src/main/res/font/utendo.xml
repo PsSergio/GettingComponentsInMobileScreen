@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="100"
+        android:font="@font/utendo_thin" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="200"
+        android:font="@font/utendo_extralight" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="300"
+        android:font="@font/utendo_light" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/utendo_regular" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="500"
+        android:font="@font/utendo_medium" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="600"
+        android:font="@font/utendo_semibold" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="700"
+        android:font="@font/utendo_bold" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="800"
+        android:font="@font/utendo_extrabold" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="900"
+        android:font="@font/utendo_black" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="950"
+        android:font="@font/utendo_extrablack" />
+</font-family>

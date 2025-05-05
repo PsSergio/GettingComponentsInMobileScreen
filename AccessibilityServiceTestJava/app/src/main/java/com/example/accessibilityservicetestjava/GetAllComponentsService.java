@@ -117,17 +117,17 @@ public class GetAllComponentsService extends AccessibilityService {
 
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
-        Log.e(TAG, "\n\nonAccessibilityEvent: \n");
-
-        AccessibilityNodeInfo rootNode = getRootInActiveWindow();
-
-        if(event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED || event.getEventType() == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED) {
-
-            getComponent(rootNode);
-
-            Log.e(TAG, "----------------------- VIEW ENDED -----------------------------");
-
-        }
+//        Log.e(TAG, "\n\nonAccessibilityEvent: \n");
+//
+//        AccessibilityNodeInfo rootNode = getRootInActiveWindow();
+//
+//        if(event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED || event.getEventType() == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED) {
+//
+//            getComponent(rootNode);
+//
+//            Log.e(TAG, "----------------------- VIEW ENDED -----------------------------");
+//
+//        }
     }
 
     @Override
